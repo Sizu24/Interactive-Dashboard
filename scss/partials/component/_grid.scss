@@ -1,0 +1,56 @@
+// grid sections
+header {
+  grid-area: header;
+  background-color: rgb(1, 135, 168);
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+nav {
+  grid-area: nav;
+  background-color: purple;
+}
+main {
+  grid-area: main;
+  background-color: steelblue;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  
+  grid-template-columns: 50px 2fr 2fr;
+  grid-template-rows: 50px 1fr 1fr;
+
+
+  grid-template-areas: 
+    "header header header"
+    "nav main main"
+    "nav main main";
+}
+
+// grid content
+
+#bell {
+  height: 15px;
+  width: 15px;
+  margin-left: 30%;
+
+}
+.line {
+  fill: #fff;
+}
+.vertical {
+  height: 30px;
+  border-left: 1px solid rgb(80, 80, 80);
+  margin: 0;
+  padding: 0;
+}
+.name {
+  font-size: 1em;
+  color: #fff;
+  padding-right: 20px;
+}
+
