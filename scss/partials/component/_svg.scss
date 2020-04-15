@@ -1,0 +1,10 @@
+#bell {
+  margin-left: 30%;
+  .line {
+    fill: #fff;
+  }
+}
+#dashboard, #members, #bell, #visits, #settings {
+  @include icon;
+  padding: 10px 0;
+}
