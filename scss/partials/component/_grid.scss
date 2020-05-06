@@ -1,10 +1,28 @@
 // grid sections
+.wrapper {
+  height: 100vh;
+  display: grid;
+  
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main";
+
+  @include mq($lg){
+    grid-template-columns: 50px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+}
+
 header {
   grid-area: header;
   background-color: #7477bf;
-  z-index: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
 }
@@ -12,38 +30,122 @@ nav {
   grid-area: nav;
   background-color: #4d4c72 ;
   padding: 12px;
+
 }
+
 main {
   grid-area: main;
-  background-color: steelblue;
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: 50px repeat(3, minmax(0px, 350px));
+
+  @include mq($lg){
+    grid-template-rows: 90px repeat(5, minmax(0px, auto));
+    grid-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.wrapper {
-  height: 100vh;
-  display: grid;
-  
-  grid-template-columns: 50px 2fr 2fr;
-  grid-template-rows: 50px 1fr 1fr;
+.dashboard {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  grid-row: 1;
+  height: 50px;
+  &-header{
+    padding: 0 20px;
+  }
 
+}
 
-  grid-template-areas: 
-    "header header header"
-    "nav main main"
-    "nav main main"
-    "nav main main"
-    "nav main main"
-    "nav main main";
+.widget-container {
+
+  @include mq($lg){
+    &-full {
+      width: 90vw;
+    }
+    &-half {
+      width: 40vw;
+    }
+  }
+}
+
+.traffic {
+  grid-row: 2;
+  background-color: #fff;
+  @include mq($lg){
+    grid-column: 1 / span 2;
+
+  }
+}
+
+.bar {
+
+  grid-row: 3;
+
+  background-color: #fff;
+  @include mq($lg){
+    grid-column: 1 / span 2;
+
+  }
+}
+.donut {
+
+  grid-row: 4;
+
+  background-color: #fff;
+  @include mq($lg){
+
+    grid-column: 2 / span 1;
+
+  }
+}
+
+.social {
+
+  grid-row: 5;
+
+  background-color: #fff;
+  @include mq($lg){
+
+    grid-column: 1 / span 2;
+    width: 90vw;
+  }
+}
+.messages {
+
+  grid-row: 6;
+  width: 90vw;
+  grid-column: 1 / span 2;
 }
 
 // header content
-
 .vertical-line {
   height: 30px;
   border-left: 1px solid rgb(80, 80, 80);
+  margin: 0 20px;
 }
 .name {
   font-size: 1em;
   color: #fff;
-  padding-right: 20px;
+}
+.member {
+  margin-right: 30px;
+}
+// dashboard content
+#search {
+  padding: 10px;
+  width: 130px;
+  margin-top: 5px;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  margin-left: 100px;
+}
+.search-bar {
+  height: 100%;
+  width: 80%;
+  background-color:rgb(236, 236, 236);
+  border-left: 0.5px solid gray;
+  border-bottom: 0.5px solid gray;
 }
 

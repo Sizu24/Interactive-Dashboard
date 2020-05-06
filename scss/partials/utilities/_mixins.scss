@@ -2,3 +2,9 @@
   height: $icon-size;
   width: $icon-size;
 }
+
+@mixin mq($size) {
+  @media (min-width: $size){
+    @content;
+  }
+}

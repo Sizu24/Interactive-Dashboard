@@ -1,10 +1,11 @@
 #bell {
-  margin-left: 30%;
   .line {
     fill: #fff;
   }
+  margin-left: 120px;
 }
-#dashboard, #members, #bell, #visits, #settings {
+
+#dashboard, #members, #bell, #visits, #settings, #twitter, #google{
   @include icon;
-  padding: 10px 0;
 }
+
