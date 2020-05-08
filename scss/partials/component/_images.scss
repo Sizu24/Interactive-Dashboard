@@ -1,16 +1,17 @@
-.member {
+.main-pic {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  margin-right: 30px;
 }
 
-.members{
-  list-style: none;
+.members-container, .activity-container {
   padding-left: 20px;
-  li img {
+  img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     padding: 10px;
+    float: left;
   }
 }

@@ -1,13 +1,13 @@
 .wrapper {
-  height: 100vh;
   display: grid;
+  height: 100vh;
   grid-template-columns: 100%;
   grid-template-rows: auto;
   grid-template-areas: "header" "nav" "main";
 }
 @media (min-width: 768px) {
   .wrapper {
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 55px 1fr;
     grid-template-areas: "header header" "nav main";
   }
 }
@@ -29,13 +29,10 @@ main {
   grid-area: main;
   background-color: #fff;
   display: grid;
-  grid-template-rows: 50px repeat(3, minmax(0px, 350px));
 }
 @media (min-width: 768px) {
   main {
-    grid-template-rows: 90px repeat(5, minmax(0px, auto));
-    grid-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50%;
   }
 }
 
@@ -43,24 +40,25 @@ main {
   background-color: #fff;
   display: flex;
   align-items: center;
-  grid-row: 1;
   height: 50px;
 }
 .dashboard-header {
   padding: 0 20px;
 }
 
+.widget-container {
+  width: 95vw;
+}
 @media (min-width: 768px) {
   .widget-container-full {
     width: 90vw;
   }
   .widget-container-half {
-    width: 40vw;
+    width: 45vw;
   }
 }
 
 .traffic {
-  grid-row: 2;
   background-color: #fff;
 }
 @media (min-width: 768px) {
@@ -70,17 +68,15 @@ main {
 }
 
 .bar {
-  grid-row: 3;
   background-color: #fff;
 }
 @media (min-width: 768px) {
   .bar {
-    grid-column: 1/span 2;
+    grid-column: 1/span 1;
   }
 }
 
 .donut {
-  grid-row: 4;
   background-color: #fff;
 }
 @media (min-width: 768px) {
@@ -90,35 +86,53 @@ main {
 }
 
 .social {
-  grid-row: 5;
   background-color: #fff;
 }
 @media (min-width: 768px) {
   .social {
     grid-column: 1/span 2;
-    width: 90vw;
+    display: flex;
   }
 }
 
-.messages {
-  grid-row: 6;
-  width: 90vw;
-  grid-column: 1/span 2;
+.members {
+  grid-column: 1/span 1;
+}
+
+.main-pic {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.members-container, .activity-container {
+  padding-left: 20px;
+}
+.members-container img, .activity-container img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  float: left;
+}
+
+#bell {
+  margin-left: 120px;
+}
+#bell .line {
+  fill: #fff;
+}
+
+#dashboard, #members, #bell, #visits, #settings, #twitter, #google {
+  height: 25px;
+  width: 25px;
 }
 
 .vertical-line {
   height: 30px;
   border-left: 1px solid #505050;
   margin: 0 20px;
-}
-
-.name {
-  font-size: 1em;
-  color: #fff;
-}
-
-.member {
-  margin-right: 30px;
 }
 
 #search {
@@ -138,39 +152,15 @@ main {
   border-bottom: 0.5px solid gray;
 }
 
-.member {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-}
-
-.members {
-  list-style: none;
-  padding-left: 20px;
-}
-.members li img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  padding: 10px;
-}
-
-#bell {
-  margin-left: 120px;
-}
-#bell .line {
-  fill: #fff;
-}
-
-#dashboard, #members, #bell, #visits, #settings, #twitter, #google {
-  height: 25px;
-  width: 25px;
-}
-
 .soc-twitter, .soc-facebook, .soc-google {
   border: 1px solid black;
   width: 80%;
   margin: 0 auto 20px auto;
+}
+@media (min-width: 768px) {
+  .soc-twitter, .soc-facebook, .soc-google {
+    margin: 20px;
+  }
 }
 
 .social-text {
@@ -184,8 +174,24 @@ main {
   margin: 0;
 }
 
-.messages h3 {
-  margin-left: 20px;
+.members h3 {
+  margin-left: 30px;
+}
+.members-container {
+  margin-bottom: 45px;
+}
+.members-text {
+  display: inline-block;
+  padding: 0;
+}
+.members-text p {
+  padding-top: 15px;
+  margin: 0;
+}
+
+.date {
+  float: right;
+  margin-top: 0px;
 }
 
 * {
@@ -207,6 +213,11 @@ h2 {
   padding: 0 20px;
   font-size: 1em;
   font-weight: bold;
+}
+
+.name {
+  font-size: 1em;
+  color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,8 +1,37 @@
-.soc{
+// header content
+.vertical-line {
+  height: 30px;
+  border-left: 1px solid rgb(80, 80, 80);
+  margin: 0 20px;
+}
+
+// dashboard content
+#search {
+  padding: 10px;
+  width: 130px;
+  margin-top: 5px;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  margin-left: 100px;
+}
+.search-bar {
+  height: 100%;
+  width: 80%;
+  background-color:rgb(236, 236, 236);
+  border-left: 0.5px solid gray;
+  border-bottom: 0.5px solid gray;
+}
+
+// Social content
+.soc {
   &-twitter, &-facebook, &-google{
     border: 1px solid black;
     width: 80%;
     margin: 0 auto 20px auto;
+
+    @include mq($lg) {
+      margin: 20px;
+    }
   }
 }
 .social-text {
@@ -15,6 +44,29 @@
     margin: 0;
   }
 }
-.messages h3{
-  margin-left: 20px;
+
+// Members content
+.members { 
+  h3 {
+    margin-left: 30px;
+  }
+
+  &-container {
+    margin-bottom: 45px;
+  }
+
+  &-text {
+    display: inline-block;
+    padding: 0;
+
+    p {
+      padding-top: 15px;
+      margin: 0;
+    }
+  }
+}
+
+.date {
+  float: right;
+  margin-top: 0px;
 }

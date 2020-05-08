@@ -6,6 +6,7 @@
   <meta name="viewport" conent="width=device-width" initial-scale="1.0">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;531&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
 </head>
 <body>
 
@@ -18,7 +19,7 @@
           fill="#000"/>
       </svg>
       <div class="vertical-line"></div>
-      <img class="member" src="images/member-2.jpg" alt="picture of a woman">
+      <img class="main-pic" src="images/member-2.jpg" alt="picture of a woman">
       <p class="name">Shahetul Chisty</p>
     </header>
 
@@ -55,6 +56,7 @@
 
     <!-- main content -->
     <main>
+
       <div class="dashboard">
         <div class="dashboard-header">
           <h2>Dashboard</h2>
@@ -65,6 +67,7 @@
         <div id="alert"></div>
       </div>
     
+    <!-- Charts -->
       <section class="traffic">
         <h2>Traffic</h2>
         <div class="traffic-header">
@@ -93,16 +96,15 @@
           <canvas id="myDonutChart"></canvas>
         </div>
       </section>
-      
+    
+      <!-- Social -->
       <div class="social">
         <h2>Social Stats</h2>
 
-  
         <div class="soc-twitter">
           <svg id="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <circle cx="50" cy="50" r="50"/>
-            <path fill="red" d="M32 3.1c-1.2.5-2.4.9-3.8 1 1.4-.8 2.4-2.1 2.9-3.6-1.3.8-2.7 1.3-4.2 1.6C25.8.8 24 0 22.2 0c-3.6 0-6.6 2.9-6.6 6.6 0 .5.1 1 .2 1.5-5.5-.3-10.3-2.9-13.6-6.9-.6 1-.9 2.1-.9 3.3 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.1-.3-3-.8v.1c0 3.2 2.3 5.8 5.3 6.4-.6.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.6-2.2 1.8-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.4-2.2 3.3-3.5z"/>
-            
+            <path fill="red" d="M32 3.1c-1.2.5-2.4.9-3.8 1 1.4-.8 2.4-2.1 2.9-3.6-1.3.8-2.7 1.3-4.2 1.6C25.8.8 24 0 22.2 0c-3.6 0-6.6 2.9-6.6 6.6 0 .5.1 1 .2 1.5-5.5-.3-10.3-2.9-13.6-6.9-.6 1-.9 2.1-.9 3.3 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.1-.3-3-.8v.1c0 3.2 2.3 5.8 5.3 6.4-.6.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.6-2.2 1.8-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 2.9 1.9 6.4 3 10.1 3 12.1 0 18.7-10 18.7-18.7v-.8c1.3-1 2.4-2.2 3.3-3.5z"/>   
           </svg>
           <div class="social-text">
             <h3>Twitter</h3>
@@ -131,15 +133,125 @@
         </div>
       </div> 
 
-      <div class="messages">
-        <h3>New Message</h3>
-        <ul class="members">
-          <li><img src="images/member-1.jpg" alt="icon of a woman"></li>
-          <li><img src="images/member-2.jpg" alt="icon of a man"></li>
-          <li><img src="images/member-3.jpg" alt="icon of a woman"></li>
-          <li><img src="images/member-4.jpg" alt="icon of a man"></li>
-        </ul>
-      </div>  
+      <!-- Members-->
+      <section class="members">
+        <h2>New Members</h2>
+
+        <div class="members-container">
+          <img src="images/member-1.jpg" alt="icon of a woman">
+          <div class="members-text">
+            <p>Victoria Chambers</p>
+            <a href="#"">victoria.chambers80@example.com</a>
+          </div>    
+          <p class="date">10/15/15</p>
+        </div>
+
+        <div class="members-container">
+          <img src="images/member-2.jpg" alt="icon of a man">
+          <div class="members-text">
+            <p>Dayle Byrd</p>
+            <a href="#"">dayle.byrd52@example.com</a>
+          </div>
+          <p class="date">10/15/15</p>
+        </div>
+
+        <div class="members-container">
+          <img src="images/member-3.jpg" alt="icon of a woman">
+          <div class="members-text">
+            <p>Dawn Wood</p>
+            <a href="#"">dawn.wood16@example.com</a>
+          </div>
+          <p class="date">10/15/15</p>
+        </div>
+
+        <div class="members-container">
+          <img src="images/member-4.jpg" alt="icon of a man">
+          <div class="members-text">
+            <p>Dan Oliver</p>
+            <a href="#"">dan.oliver82@example.com</a>
+          </div>
+          <p class="date">10/15/15</p>
+        </div>
+      </section>
+
+      <!-- Activity -->
+      <section class="activity">
+        <h2>Recent Activity</h2>
+
+        <div class="activity-container">
+          <img src="images/member-1.jpg" alt="icon of a woman">
+          <div class="activity-text">
+            <p>Victoria Chambers commented on YourApp's SEO tips</p>
+            <p>4 hours ago</p>
+          </div>
+        </div>
+
+        <div class="activity-container">
+          <img src="images/member-2.jpg" alt="icon of a man">
+          <div class="activity-text">
+            <p>Dayle Byrd liked your Facebook's Changes for 2016</p>
+            <p>5 hours ago</p>
+          </div>
+        </div>
+
+        <div class="activity-container">
+          <img src="images/member-3.jpg" alt="icon of a woman">
+          <div class="activity-text">
+            <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+            <p>5 hours ago</p>
+          </div>
+        </div>
+
+        <div class="activity-container">
+          <img src="images/member-4.jpg" alt="icon of a man">
+          <div class="activity-text">
+            <p>Dan Oliver posted YourApps's SEO Tips</p>
+            <p>1 day ago</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Message -->
+      <section class="message">
+        <h2>Message User</h2>
+        <form class="message-container">
+          <input type="text" id="input" name="search" placeholder="Search for user">
+          <textarea class="form-area" name="input" rows="10" columns="200"></textarea>
+          <button class="button">Send</button>
+        </form>
+      </section>
+
+      <!-- Settings -->
+      <section class="settings"> 
+        <h2>Settings</h2>
+        <label class="switch-light switch-material" onclick="">
+          <input type="checkbox">
+        
+          <strong>
+            Send Email Notifications
+          </strong>
+        
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+
+        <label class="switch-light switch-material" onlick="">
+          <input type="checkbox">
+
+          <strong>
+            Set Profile to Public
+          </strong>
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+        
+      </section>
 
     </main>
 
