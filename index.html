@@ -215,22 +215,21 @@
       <section class="message">
         <h2>Message User</h2>
         <form class="message-container">
-          <input type="text" id="input" name="search" placeholder="Search for user">
-          <textarea class="form-area" name="input" rows="10" columns="200"></textarea>
-          <button class="button">Send</button>
+          <input type="text" id="search" name="search" placeholder="Search for user">
+          <textarea class="text-area" name="input" rows="10" columns="50"></textarea>
+          <button class="button">SEND</button>
         </form>
       </section>
 
       <!-- Settings -->
       <section class="settings"> 
         <h2>Settings</h2>
+
         <label class="switch-light switch-material" onclick="">
           <input type="checkbox">
-        
           <strong>
             Send Email Notifications
-          </strong>
-        
+          </strong> 
           <span>
             <span>Off</span>
             <span>On</span>
@@ -240,7 +239,6 @@
 
         <label class="switch-light switch-material" onlick="">
           <input type="checkbox">
-
           <strong>
             Set Profile to Public
           </strong>
@@ -251,6 +249,11 @@
           </span>
         </label>
         
+        <select class="form-field" id="timezone">
+          <option>Select a Timezone</option>
+          <option>Eastern</option>
+
+        </select>
       </section>
 
     </main>

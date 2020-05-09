@@ -102,8 +102,33 @@ main {
 }
 
 .members {
-  grid-column: 1 / span 1;
+  @include mq($lg){
+    grid-column: 1 / span 1;
+  }
 }
+.activity {
+  @include mq($lg){
+    grid-column: 2 / span 1;
+  }
+}
+
+.message {
+  &-container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  @include mq($lg){
+    grid-column: 1 / span 1;
+  }
+}
+.settings {
+  @include mq($lg){
+    grid-column: 2 / span 1;
+  }
+}
+
 
 
 
