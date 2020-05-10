@@ -87,9 +87,9 @@ let donutChart = new Chart(donutChartId, {
     datasets: [{
       label: 'Points',
       backgroundColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(255, 99, 132, 1)',
-        'rgba(255, 99, 132, 1)'
+        'rgb(116, 177, 191, 1)',
+        'rgb(129, 201, 143, 1)',
+        'rgb(115, 119, 191, 1)'
       ],
       data: [10, 20, 45]
     }]

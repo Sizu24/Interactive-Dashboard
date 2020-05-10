@@ -8,7 +8,7 @@
 // dashboard content
 #search {
   padding: 10px;
-  width: 130px;
+  width: 55%;
   margin-top: 5px;
   border: 0.5px solid rgb(192, 192, 192);
   border-radius: 5px;
@@ -20,6 +20,9 @@
   background-color:rgb(236, 236, 236);
   border-left: 0.5px solid gray;
   border-bottom: 0.5px solid gray;
+  @include mq($lg){
+
+  }
 }
 
 // Social content
@@ -70,20 +73,69 @@
   float: right;
   margin-top: 0px;
 }
-#search{
-  padding: 200px;
+#find-user{
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: rgb(252, 250, 250);
 }
 .text-area {
-  border-radius: 5px;
-  margin: 10px 0;
+  border-radius: 3px;
+  margin: 20px 0;
+  background-color: rgb(252, 250, 250);
 }
 .button {
   width: 100%;
-  background-color: purple;
-  padding: 20px;
+  background-color:	#7377bf;
+  padding: 15px;
   border-radius: 5px;
   color: white;
   font-size: 1em;
   font-weight: 800;
  
+}
+// settings
+.switch-light{
+  margin: 20px;
+  @include mq($lg){
+    margin-right: 300px;
+  }
+  strong{
+    float: left;
+  }
+  span{
+    float: right;
+  }
+}
+
+.form-field { 
+  height: 200px;
+  font-size: 1em;
+  @include mq($lg){
+    width: 555px;
+    margin: 15px auto;
+  }
+}
+
+.settings-button{
+  display: flex;
+  button{
+    border: none;
+    margin: 10px auto;
+    padding: 15px 82px;
+    border-radius: 5px;
+    color: #fff;
+    @include mq($lg){
+      padding: 15px 100px;
+    }
+  }
+  .save {
+    background-color: $main;
+    margin-right: 23px;
+
+  }
+  .cancel {
+    background-color: #b2b2b2;
+    margin-left: 23px;
+  }
 }
