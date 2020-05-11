@@ -48,14 +48,17 @@ main {
   background-color: #fff;
   display: flex;
   align-items: center;
-  width: 95vw;
-  grid-column: 1 / span 2;
 
   height: 50px;
   &-header{
     padding: 0 20px;
   }
+  @include mq($lg){
+    width: 95vw;
+    grid-column: 1 / span 2;
+  }
 }
+
 
 .widget-container {
   width: 95vw;
