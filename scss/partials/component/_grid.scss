@@ -4,7 +4,7 @@
   height: 100vh;
   
   grid-template-columns: 100%;
-  grid-template-rows: auto;
+  grid-template-rows: 50px auto;
 
   grid-template-areas: 
     "header"
@@ -24,7 +24,14 @@ header {
   background-color: #7477bf;
   display: flex;
   align-items: center;
-
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include mq($lg){
+      margin-left: 750px;
+    }
+  }
 }
 
 nav {

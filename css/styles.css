@@ -2,7 +2,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 100%;
-  grid-template-rows: auto;
+  grid-template-rows: 50px auto;
   grid-template-areas: "header" "nav" "main";
 }
 @media (min-width: 768px) {
@@ -17,6 +17,16 @@ header {
   background-color: #7477bf;
   display: flex;
   align-items: center;
+}
+header section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  header section {
+    margin-left: 750px;
+  }
 }
 
 nav {
@@ -172,11 +182,16 @@ main {
 
 #search {
   padding: 10px;
-  width: 55%;
+  width: 58%;
   margin-top: 5px;
   border: 0.5px solid silver;
   border-radius: 5px;
   margin-left: 100px;
+}
+@media (min-width: 768px) {
+  #search {
+    margin-left: 400px;
+  }
 }
 
 .search-bar {

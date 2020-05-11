@@ -8,11 +8,14 @@
 // dashboard content
 #search {
   padding: 10px;
-  width: 55%;
+  width: 58%;
   margin-top: 5px;
   border: 0.5px solid rgb(192, 192, 192);
   border-radius: 5px;
   margin-left: 100px;
+  @include mq($lg){
+   margin-left: 400px;
+  }
 }
 .search-bar {
   height: 100%;
