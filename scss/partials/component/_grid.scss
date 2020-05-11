@@ -48,6 +48,8 @@ main {
   background-color: #fff;
   display: flex;
   align-items: center;
+  width: 95vw;
+  grid-column: 1 / span 2;
 
   height: 50px;
   &-header{
