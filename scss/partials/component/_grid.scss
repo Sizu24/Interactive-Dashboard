@@ -2,6 +2,7 @@
 .wrapper {
   display: grid;
   height: 100vh;
+  width: 100%;
   
   grid-template-columns: 100%;
   grid-template-rows: 50px auto;
@@ -55,39 +56,8 @@ main {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  
-  &-header{
-    padding: 0 20px;
-  }
   @include mq($lg){
     grid-column: 1 / span 2;
-    width: 95vw;
-  }
-}
-#alert{
-  display: flex;
-  flex-direction: row;
-  margin: 10px auto;
-  width: 98%;
-  background-color: $main;
-  border-radius: 5px;
-}
-
-.alert-banner {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  p{
-    margin: 0;
-  }
-  &-close {
-    padding: 10px;
-    text-align: right;
-    margin: 0 0 40px 40px;
-    grid-column: 2;
-    color: #fff;
-    font-weight: 900;
   }
 }
 
@@ -107,7 +77,6 @@ main {
 
 .traffic {
   background-color: #fff;
-
   @include mq($lg) {
     grid-column: 1 / span 2;
   }

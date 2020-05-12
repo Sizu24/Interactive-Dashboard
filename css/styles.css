@@ -1,6 +1,7 @@
 .wrapper {
   display: grid;
   height: 100vh;
+  width: 100%;
   grid-template-columns: 100%;
   grid-template-rows: 50px auto;
   grid-template-areas: "header" "nav" "main";
@@ -52,41 +53,10 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
-.dashboard-header {
-  padding: 0 20px;
-}
 @media (min-width: 768px) {
   .dashboard {
     grid-column: 1/span 2;
-    width: 95vw;
   }
-}
-
-#alert {
-  display: flex;
-  flex-direction: row;
-  margin: 10px auto;
-  width: 98%;
-  background-color: #7377bf;
-  border-radius: 5px;
-}
-
-.alert-banner {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-}
-.alert-banner p {
-  margin: 0;
-}
-.alert-banner-close {
-  padding: 10px;
-  text-align: right;
-  margin: 0 0 40px 40px;
-  grid-column: 2;
-  color: #fff;
-  font-weight: 900;
 }
 
 .widget-container {
@@ -217,31 +187,78 @@ nav svg {
   margin: 0 20px;
 }
 
-#search {
-  padding: 10px;
-  width: 58%;
-  margin: 5px 0 5px 100px;
-  border: 0.5px solid silver;
-  border-radius: 5px;
-}
-@media (min-width: 768px) {
-  #search {
-    margin-left: 55%;
-    width: 40%;
-  }
-}
-
-.search-bar {
+.search-area {
   height: 100%;
-  width: 74%;
+  width: 72.5%;
   background-color: #ececec;
   border-left: 0.5px solid gray;
   border-bottom: 0.5px solid gray;
 }
 @media (min-width: 768px) {
-  .search-bar {
-    width: 89.7%;
+  .search-area {
+    width: 88.9%;
   }
+}
+
+#searchbar {
+  padding: 10px;
+  width: 58%;
+  margin: 10px 0 10px 100px;
+  border: 0.5px solid silver;
+  border-radius: 5px;
+}
+@media (min-width: 768px) {
+  #searchbar {
+    margin-left: 55%;
+    width: 40%;
+  }
+}
+
+#alert {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  width: 98%;
+  background-color: #7377bf;
+  border-radius: 5px;
+}
+
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  align-items: center;
+  width: 100%;
+}
+.alert-banner p {
+  margin: 0;
+}
+.alert-banner-close {
+  padding: 10px;
+  color: #fff;
+  font-weight: 900;
+}
+@media (min-width: 768px) {
+  .alert-banner {
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+}
+
+.traffic-header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .traffic-header ul {
+    margin-right: 200px;
+  }
+}
+.traffic-header ul li {
+  padding: 0 20px;
+  font-weight: 600;
 }
 
 .soc-twitter, .soc-facebook, .soc-google {

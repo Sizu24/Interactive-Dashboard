@@ -6,10 +6,21 @@
 }
 
 // Dashboard content
-#search {
+.search-area {
+  height: 100%;
+  width: 72.5%;
+  background-color:rgb(236, 236, 236);
+  border-left: 0.5px solid gray;
+  border-bottom: 0.5px solid gray;
+  @include mq($lg){
+    width: 88.9%;
+  }
+}
+
+#searchbar {
   padding: 10px;
   width: 58%;
-  margin: 5px 0 5px 100px;
+  margin: 10px 0 10px 100px;
   border: 0.5px solid rgb(192, 192, 192);
   border-radius: 5px;
   @include mq($lg){
@@ -17,17 +28,53 @@
    width: 40%;
   }
 }
-.search-bar {
-  height: 100%;
-  width: 74%;
-  background-color:rgb(236, 236, 236);
-  border-left: 0.5px solid gray;
-  border-bottom: 0.5px solid gray;
+
+#alert{
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  width: 98%;
+  background-color: $main;
+  border-radius: 5px;
+}
+
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  align-items: center;
+  width: 100%;
+  p{
+    margin: 0;
+  }
+  &-close {
+    padding: 10px;
+    color: #fff;
+    font-weight: 900;
+  }
   @include mq($lg){
-    width: 89.7%;
+    margin-right: 10px;
+    margin-left: 30px;
   }
 }
 
+// Traffic content
+
+.traffic-header {
+  ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    @include mq($lg){
+      margin-right: 200px;
+    }
+    li {
+      padding: 0 20px;
+      font-weight: 600;
+    }
+  }
+}
 // Social content
 .soc {
   &-twitter, &-facebook, &-google{
