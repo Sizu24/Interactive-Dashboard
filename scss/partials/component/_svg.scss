@@ -9,3 +9,10 @@
   @include icon;
 }
 
+nav svg {
+  margin: 0 9%;
+  @include mq($lg){
+    margin: 10px 0;
+    padding: 3px;
+  }
+}
