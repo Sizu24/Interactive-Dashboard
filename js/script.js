@@ -118,3 +118,25 @@ let donutChart = new Chart(donutChartId, {
   data: mobileData,
   options: mobileOptions
 });
+
+/* ---------------------- Message section ---------------------- */
+
+const user = document.getElementById('find-user');
+const message = document.getElementById('text-area');
+const send = document.getElementById('send');
+
+console.log(`Message value is ${message.classList}`);
+console.log(`User value is ${user.value}`);
+
+send.addEventListener('click', ()=>{
+  if(user.value === "" && message.value === ""){
+    alert("Both fields musth be filled out to submit");
+  }else if(user.value === ""){
+    alert("Please fill out user serach field");
+  }else if(message.value === "") {
+    alert("Please fill out message field");
+  }else{
+    alert(`Message sent successfully to: ${user.value}`);
+  }
+});
+

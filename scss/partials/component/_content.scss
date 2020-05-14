@@ -5,37 +5,46 @@
   margin: 0 20px;
 }
 
+// header h1 {
+//   display: inline-block;
+// }
+
 // Dashboard content
 .search-area {
-  height: 100%;
-  width: 72.5%;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
   background-color:rgb(236, 236, 236);
-  border-left: 0.5px solid gray;
-  border-bottom: 0.5px solid gray;
-  @include mq($lg){
-    width: 88.9%;
+  border-bottom: $border;
+  border-left: $border;
+  h2 {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0;
+    border-left: none;
   }
 }
 
 #searchbar {
-  padding: 10px;
-  width: 58%;
-  margin: 10px 0 10px 100px;
+  flex-grow: 1;
+  margin: 8px 10px 8px 0;
   border: 0.5px solid rgb(192, 192, 192);
   border-radius: 5px;
-  @include mq($lg){
-   margin-left: 55%;
-   width: 40%;
+  padding: 10px;
+  max-width: 50%;
+  @include mq($md){
+    max-width: 60%;
   }
+
 }
 
 #alert{
   display: flex;
   flex-direction: row;
   margin: 10px auto;
-  width: 98%;
+  width: 90%;
   background-color: $main;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .alert-banner {
@@ -52,7 +61,7 @@
     color: #fff;
     font-weight: 900;
   }
-  @include mq($lg){
+  @include mq($md){
     margin-right: 10px;
     margin-left: 30px;
   }
@@ -66,7 +75,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    @include mq($lg){
+    @include mq($md){
       margin-right: 200px;
     }
     li {
@@ -76,19 +85,44 @@
   }
 }
 // Social content
+.social-content {
+  margin: 0 20px;
+  
+  @include mq($lg){
+    flex-direction: row;
+    display: flex;
+    align-content: center;
+    padding-bottom: 50px;
+  }
+}
 .soc {
-  &-twitter, &-facebook, &-google{
-    border: 1px solid black;
-    width: 80%;
-    margin: 0 auto 20px auto;
+  &-icon {
+    border-radius: 50%;
+    background-color: $main;
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
 
-    @include mq($lg) {
+  }
+  &-twitter, &-facebook, &-google{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: auto;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 0 auto 20px auto;
+    padding: 20px;
+ 
+    @include mq($md) {
       margin: 20px;
     }
   }
 }
 .social-text {
-  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
   h3{
     margin: 0;
   }
@@ -105,7 +139,8 @@
   }
 
   &-container {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
+    margin-right: 20px;
   }
 
   &-text {
@@ -135,7 +170,7 @@
   border: 1px solid gray;
   background-color: rgb(252, 250, 250);
 }
-.text-area {
+#text-area {
   border-radius: 3px;
   margin: 20px 0;
   background-color: rgb(252, 250, 250);
@@ -153,7 +188,7 @@
 // settings content
 .switch-light{
   margin: 20px;
-  @include mq($lg){
+  @include mq($md){
     margin-right: 300px;
   }
   strong{
@@ -167,7 +202,7 @@
 .form-field { 
   height: 50px;
   font-size: 1em;
-  @include mq($lg){
+  @include mq($md){
     width: 555px;
     margin: 15px auto;
   }
@@ -181,7 +216,7 @@
     padding: 15px 82px;
     border-radius: 5px;
     color: #fff;
-    @include mq($lg){
+    @include mq($md){
       padding: 15px 100px;
     }
   }

@@ -2,16 +2,20 @@
   .line {
     fill: #fff;
   }
+  &:hover .line{
+    fill: #000;
+    transition-duration: 1s;
+  }
   margin-left: 120px;
 }
 
-#dashboard, #members, #bell, #visits, #settings, #twitter, #google{
+#dashboard, #members, #bell, #visits, #settings{
   @include icon;
 }
 
 nav svg {
   margin: 0 9%;
-  @include mq($lg){
+  @include mq($md){
     margin: 10px 0;
     padding: 3px;
   }
