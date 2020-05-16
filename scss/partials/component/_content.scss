@@ -1,14 +1,35 @@
 // header content
+header{
+  h1 {
+    float: left;
+  }
+  section {
+    display: flex;
+    align-items: center;
+    // justify-content: flex-end;
+    margin-right: 5%;
+    float: right;
+
+  }
+}
 .vertical-line {
   height: 30px;
   border-left: 1px solid rgb(80, 80, 80);
   margin: 0 20px;
 }
-
-// header h1 {
-//   display: inline-block;
-// }
-
+.dropdown-style {
+  ul{
+    list-style: none;
+    list-style-position: inside;
+    padding-left: 0;
+    li {
+      padding: 10px;
+      margin: 5px;
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
 // Dashboard content
 .search-area {
   display: flex;
@@ -84,6 +105,13 @@
     }
   }
 }
+.active {
+  display: block;
+  padding-top: 25px;
+  background-color: green;
+  color: #fff;
+  border-radius: 10px;
+}
 // Social content
 .social-content {
   margin: 0 20px;
@@ -91,8 +119,7 @@
   @include mq($lg){
     flex-direction: row;
     display: flex;
-    align-content: center;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 .soc {
@@ -106,11 +133,10 @@
   }
   &-twitter, &-facebook, &-google{
     display: flex;
-    flex-grow: 1;
-    flex-basis: auto;
+    flex: 1 auto;
     justify-content: center;
     border: 1px solid black;
-    margin: 0 auto 20px auto;
+    margin-bottom: 20px;
     padding: 20px;
  
     @include mq($md) {
@@ -199,12 +225,13 @@
   }
 }
 
-.form-field { 
+#timezone { 
   height: 50px;
   font-size: 1em;
+  width: 475px;
+  margin: 15px auto;
   @include mq($md){
-    width: 555px;
-    margin: 15px auto;
+    width: 550px;
   }
 }
 
@@ -213,11 +240,12 @@
   button{
     border: none;
     margin: 10px auto;
-    padding: 15px 82px;
+    padding: 15px 0;
     border-radius: 5px;
     color: #fff;
+    width: 43%;
     @include mq($md){
-      padding: 15px 100px;
+      width: 44%;
     }
   }
   .save {

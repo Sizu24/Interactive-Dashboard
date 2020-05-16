@@ -140,3 +140,27 @@ send.addEventListener('click', ()=>{
   }
 });
 
+// Bell notification
+const bell = document.getElementById("bell");
+const greenDot = bell.firstElementChild;
+const headerContent = document.querySelector(".header-content");
+let dropdown = headerContent.firstElementChild;
+let listItems = 
+`<ul>
+  <li>Pick up cake</li>
+  <li>Play Warzone</li>
+  <li>Make pizza</li>
+</ul>`
+
+bell.addEventListener("click", ()=>{
+  greenDot.style.backgroundColor = "#7377bf";
+  greenDot.style.transitionDuration = "1s";
+  
+
+  if(dropdown.innerHTML === ""){
+    dropdown.innerHTML = listItems;
+    dropdown.classList.add("dropdown-style");
+  }else {
+    dropdown.innerHTML = "";
+  }
+});
