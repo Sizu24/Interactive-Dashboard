@@ -144,23 +144,29 @@ send.addEventListener('click', ()=>{
 const bell = document.getElementById("bell");
 const greenDot = bell.firstElementChild;
 const headerContent = document.querySelector(".header-content");
-let dropdown = headerContent.firstElementChild;
+const dropdown = headerContent.firstElementChild;
+let itemOne = "Pick up cake";
+let itemTwo = "Play Warzone";
+let itemThree = "Make pizza";
 let listItems = 
 `<ul>
-  <li>Pick up cake</li>
-  <li>Play Warzone</li>
-  <li>Make pizza</li>
+  <li>${itemOne}</li>
+  <li>${itemTwo}</li>
+  <li>${itemThree}</li>
 </ul>`
 
 bell.addEventListener("click", ()=>{
   greenDot.style.backgroundColor = "#7377bf";
-  greenDot.style.transitionDuration = "1s";
-  
+  greenDot.style.transitionDuration = "3s";
 
   if(dropdown.innerHTML === ""){
-    dropdown.innerHTML = listItems;
     dropdown.classList.add("dropdown-style");
+    dropdown.style.transitionDuration = "1s";
+    dropdown.style.top = "-10px";
+    dropdown.innerHTML = listItems;
   }else {
     dropdown.innerHTML = "";
   }
 });
+
+// transition dropdown in slowly

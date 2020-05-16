@@ -7,7 +7,7 @@ header{
     display: flex;
     align-items: center;
     // justify-content: flex-end;
-    margin-right: 5%;
+    padding-right: 5%;
     float: right;
 
   }
@@ -23,12 +23,19 @@ header{
     list-style-position: inside;
     padding-left: 0;
     li {
-      padding: 10px;
+      padding: 15px 40px;
       margin: 5px;
       background-color: #000;
       color: #fff;
+      border-radius: 5px;
     }
   }
+}
+
+#dropdown {
+  top: -1000px;
+  right: 300px;
+  position: absolute;
 }
 // Dashboard content
 .search-area {
