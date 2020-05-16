@@ -1,20 +1,3 @@
-let alertBanner = document.getElementById("alert");
-
-alertBanner.innerHTML = 
-`
-<div class="alert-banner">
-  <p><strong>Alert: </strong>you have <strong>6 </strong>overdue tasks to complete</p>
-  <p class="alert-banner-close">x</p>
-</div>
-`
-
-alertBanner.addEventListener('click', e =>{
-  const element = e.target;
-  if(element.classList.contains("alert-banner-close")){
-    alertBanner.style.display = "none"
-  }
-});
-
 /* --------------------------- Charts --------------------------- */
 
 // line chart
@@ -140,33 +123,73 @@ send.addEventListener('click', ()=>{
   }
 });
 
-// Bell notification
+/* ---------------------- Bell notification ---------------------- */
+
+// variables
 const bell = document.getElementById("bell");
 const greenDot = bell.firstElementChild;
-const headerContent = document.querySelector(".header-content");
-const dropdown = headerContent.firstElementChild;
+
+const dropdown = document.getElementById("dropdown");
+
+// Notification List items
 let itemOne = "Pick up cake";
 let itemTwo = "Play Warzone";
 let itemThree = "Make pizza";
-let listItems = 
-`<ul>
-  <li>${itemOne}</li>
-  <li>${itemTwo}</li>
-  <li>${itemThree}</li>
-</ul>`
 
+// List
+let listItems = 
+`
+<ul id="notifications">
+  <li><span>x</span>${itemOne}</li>
+  <li><span>x</span>${itemTwo}</li>
+  <li><span>x</span>${itemThree}</li>
+</ul>
+`
+// Notification Bell & add items
 bell.addEventListener("click", ()=>{
   greenDot.style.backgroundColor = "#7377bf";
-  greenDot.style.transitionDuration = "3s";
+  greenDot.style.transitionDuration = "1s";
 
+  // Adds items to list on bell click, and closes Items
   if(dropdown.innerHTML === ""){
     dropdown.classList.add("dropdown-style");
-    dropdown.style.transitionDuration = "1s";
-    dropdown.style.top = "-10px";
+    dropdown.classList.add("show");
     dropdown.innerHTML = listItems;
-  }else {
-    dropdown.innerHTML = "";
+
+    closeBox();  
   }
 });
 
-// transition dropdown in slowly
+// Close Notification Items function
+const closeBox = ()=>{
+  let dropdownList = document.getElementById("notifications");
+  dropdownList.addEventListener("click", e =>{
+    if(e.target.textContent === "x"){
+      let closedropdown = e.target;
+      let dropdownItem = closedropdown.parentNode;
+      dropdownItem.classList.add("remove");
+      // Delay funciton to remove list item
+      setTimeout(function(){
+        dropdownItem.remove();
+      }, 650);
+    }
+  });
+}
+
+/* ------------------------- Alert Banner Pop-up ------------------------- */
+
+let alertBanner = document.getElementById("alert");
+
+alertBanner.innerHTML = 
+`
+<div class="alert-banner">
+  <p><strong>Alert: </strong>you have <strong>6 </strong>overdue tasks to complete</p>
+  <p class="alert-banner-close">x</p>
+</div>
+`
+alertBanner.addEventListener('click', e =>{
+  const element = e.target;
+  if(element.classList.contains("alert-banner-close")){
+    alertBanner.style.display = "none"
+  }
+});

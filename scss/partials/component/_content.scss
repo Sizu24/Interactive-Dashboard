@@ -1,4 +1,4 @@
-// header content
+// Header content
 header{
   h1 {
     float: left;
@@ -17,25 +17,54 @@ header{
   border-left: 1px solid rgb(80, 80, 80);
   margin: 0 20px;
 }
+// Dropdown
 .dropdown-style {
   ul{
     list-style: none;
     list-style-position: inside;
     padding-left: 0;
     li {
-      padding: 15px 40px;
-      margin: 5px;
+      position: relative;
+      min-width: 95.734px;
+      padding: 20px 40px;
+      margin-bottom: 5px;
       background-color: #000;
       color: #fff;
       border-radius: 5px;
+      &.remove {
+        position: relative;
+        opacity: 0;
+        transform: translateY(-50px);
+        transition-duration: 300ms;
+        transition-timing-function: ease-in;
+      }
+      span{
+        position: absolute;
+        color: #fff;
+        margin-left: 117px;
+        font-weight: bold;
+        line-height: 5px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
     }
   }
 }
 
 #dropdown {
-  top: -1000px;
-  right: 300px;
+  top: -100px;
+  opacity: 0;
+  @include mq($lg){
+    right: 300px;
+  }
   position: absolute;
+  &.show{
+    transform: translateY(100px);
+    opacity: 100%;
+    transition-duration: 650ms;
+    transition-timing-function: ease-out;
+  }
 }
 // Dashboard content
 .search-area {
@@ -88,6 +117,7 @@ header{
     padding: 10px;
     color: #fff;
     font-weight: 900;
+    cursor: pointer;
   }
   @include mq($md){
     margin-right: 10px;
