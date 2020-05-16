@@ -102,6 +102,11 @@ header{
   width: 90%;
   background-color: $main;
   border-radius: 2px;
+
+  &.inactive {
+    opacity: 0%;
+    transition-duration: 200ms;
+  }
 }
 
 .alert-banner {
@@ -119,6 +124,7 @@ header{
     font-weight: 900;
     cursor: pointer;
   }
+
   @include mq($md){
     margin-right: 10px;
     margin-left: 30px;

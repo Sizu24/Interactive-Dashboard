@@ -324,6 +324,10 @@ header section {
   background-color: #7377bf;
   border-radius: 2px;
 }
+#alert.inactive {
+  opacity: 0%;
+  transition-duration: 200ms;
+}
 
 .alert-banner {
   display: flex;
