@@ -227,7 +227,8 @@
       <section class="message">
         <h2>Message User</h2>
         <form class="message-container">
-          <input type="text" id="find-user" name="search" placeholder="Search for user">
+          <input type="text" id="find-user" name="search" autocomplete="off" onkeyup="searchValue()" placeholder="Search for user">
+          <div id="auto-fill"></div>
           <textarea id="text-area" name="input" rows="10" columns="50" placeholder="Message for User"></textarea>
           <button class="button" id="send">SEND</button>
         </form>

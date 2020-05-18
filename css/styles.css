@@ -454,6 +454,12 @@ header section {
   background-color: #fcfafa;
 }
 
+#auto-fill {
+  position: relative;
+  display: inline-block;
+  border: 1px solid gray;
+}
+
 #text-area {
   border-radius: 3px;
   margin: 20px 0;

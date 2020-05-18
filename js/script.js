@@ -6,31 +6,25 @@ let lineChartId = document.getElementById('myChart');
 // Variables
 let activeChart = document.getElementById("traffic-nav");
 let chartList = activeChart.querySelectorAll("li");
+
+// Chart labels
 let hourlyChart = ['12-3','3-5','5-8','9-11','11-1','1-3','3-6','7-9','9-11','11-12'];
 let weeklyChart = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10',
 '11-17','18-24','25-31'];
 let dailyChart = ['S','M','T','W','TH','F','S'];
 let monthlyChart = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-// Event listener for switching timeframes for line chart
-activeChart.addEventListener("click", e =>{
-  
-  // Variables
-  let element = e.target;
 
-  // Clean list by removing "active" class name from all items in list
+/* Clean list by removing "active" class name from all items in list */
+let removeActive = ()=>{
   for(let i = 0; i < chartList.length; i++){
     chartList[i].classList.remove("active");
   }
+};
 
-  // Add "active" class name to clicked item
-  if(element.tagName === "LI"){
-    console.log(element.tagName);
-    element.classList.toggle("active");
-  }
-
-  /* Look for item with "active" class,
-  assign corrct labels to chart, and refresh chart */
+/* Look for item with "active" class,
+assign corrct labels to chart, and refresh chart */
+let updateChart = ()=>{
   for(let i = 0; i < chartList.length; i++){
     if(chartList[i].className === "active"){
       if(chartList[i].textContent === "Hourly"){
@@ -48,7 +42,24 @@ activeChart.addEventListener("click", e =>{
       }
     }
   }
-}); // <--- End of event listener function
+};
+
+/* Event listener for switching timeframes for line chart */
+activeChart.addEventListener("click", e =>{
+  // Variables
+  let element = e.target;
+
+  // Removes "active" class
+  removeActive();
+
+  // Add "active" class name to clicked item
+  if(element.tagName === "LI"){
+    element.classList.toggle("active");
+  }
+
+  // function to update chart
+  updateChart();
+});
 
 // Chart Data Object
 let trafficData = {
@@ -86,9 +97,10 @@ let lineChart = new Chart(lineChartId, {
 });
 
 
-// bar chart
+// Bar chart
 let barChartId = document.getElementById('myBarChart');
 
+// Data
 let dailyData = {
   labels: ['S','M','T','W','T','F','S'],
   datasets: [{
@@ -99,6 +111,7 @@ let dailyData = {
   }]
 };
 
+// Options
 let dailyOptions = {
   scales: {
     yAxes: [{
@@ -110,17 +123,19 @@ let dailyOptions = {
   legend: {
     display: false
   }
-}
+};
 
+// Chart Object
 let barChart = new Chart(barChartId, {
   type: 'bar',
   data: dailyData,
   options: dailyOptions
 });
 
-// donut chart
+// Donut Chart
 let donutChartId = document.getElementById('myDonutChart');
 
+// Data
 let mobileData = {
   labels: ['Desktop','Tablet','Phones'],
   datasets: [{
@@ -135,6 +150,7 @@ let mobileData = {
   }]
 };
 
+// Options
 let mobileOptions = {
   legend: {
     position: 'right',
@@ -145,6 +161,7 @@ let mobileOptions = {
   }
 };
 
+// Chart Object
 let donutChart = new Chart(donutChartId, {
   type: 'doughnut',
   data: mobileData,
@@ -191,7 +208,8 @@ let listItems =
   <li><span>x</span>${itemTwo}</li>
   <li><span>x</span>${itemThree}</li>
 </ul>
-`
+`;
+
 // Event listener for notification bell & add items to notification list
 bell.addEventListener("click", ()=>{
   // make blue notification dot disappear into background color
@@ -223,19 +241,18 @@ const closeBox = ()=>{
       }, 450);
     }
   });
-}
+};
 
 /* ------------------------- Alert Banner Pop-up ------------------------- */
 
 let alertBanner = document.getElementById("alert");
 
 alertBanner.innerHTML = 
-`
-<div class="alert-banner">
+`<div class="alert-banner">
   <p><strong>Alert: </strong>you have <strong>3 </strong>overdue tasks to complete</p>
   <p class="alert-banner-close">x</p>
-</div>
-`
+</div>`;
+
 // Make banner fade out, and add "inactive" class
 alertBanner.addEventListener('click', e =>{
   const element = e.target;
@@ -246,3 +263,26 @@ alertBanner.addEventListener('click', e =>{
     }, 400);
   }
 });
+
+/* ---------------------- Auto Complete ---------------------- */
+
+let names = ['Victoria Chambers','Dayle Byrd','Dawn Wood','Dan Oliver'];
+
+const searchBar = document.getElementById("find-user");
+const autoFillBox = document.getElementById("auto-fill");
+let userResults = [];
+
+let searchValue = ()=>{
+  let userInputValue = searchBar.value;
+
+    if(userInputValue !== ""){
+      userResults = names.filter(name => name.toLowerCase().indexOf(userInputValue.toLowerCase()) !== -1);
+    }else {
+      userResults = [];
+    };
+
+    autoFillBox.textContent = userResults;
+    console.log(userResults);
+  }
+  
+
