@@ -269,20 +269,26 @@ alertBanner.addEventListener('click', e =>{
 let names = ['Victoria Chambers','Dayle Byrd','Dawn Wood','Dan Oliver'];
 
 const searchBar = document.getElementById("find-user");
+const autoComlpleteItems = document.getElementById("auto-complete-items");
+
 const autoFillBox = document.getElementById("auto-fill");
 let userResults = [];
+let autoFillList = [];
+
+autoComlpleteItems.style.listStyle = "none";
 
 let searchValue = ()=>{
   let userInputValue = searchBar.value;
 
     if(userInputValue !== ""){
       userResults = names.filter(name => name.toLowerCase().indexOf(userInputValue.toLowerCase()) !== -1);
+      autoFillList = userResults.map(names => `<li>${names}<li>`);
+    
     }else {
-      userResults = [];
-    };
+      autoFillList = [];
+    }
+    autoComlpleteItems.innerHTML = autoFillList.join(" ");
+}
 
-    autoFillBox.textContent = userResults;
-    console.log(userResults);
-  }
-  
+
 

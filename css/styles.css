@@ -448,16 +448,18 @@ header section {
 }
 
 #find-user {
+  width: 520px;
   border-radius: 3px;
   padding: 10px;
   border: 1px solid gray;
   background-color: #fcfafa;
 }
 
-#auto-fill {
-  position: relative;
-  display: inline-block;
+#auto-complete-items ul {
   border: 1px solid gray;
+  list-style-type: none;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 #text-area {

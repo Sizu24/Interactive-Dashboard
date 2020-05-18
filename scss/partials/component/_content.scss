@@ -234,16 +234,20 @@ header{
 }
 
 #find-user{
+  width: 520px;
   border-radius: 3px;
   padding: 10px;
   border: 1px solid gray;
   background-color: rgb(252, 250, 250);
 }
-#auto-fill{
-  position: relative;
-  display: inline-block;
-  border: 1px solid gray;
-
+#auto-complete-items{
+  ul{
+    // position: relative;
+    border: 1px solid gray;
+    list-style-type: none;
+    padding-left: 0;
+    list-style-position: inside;
+  } 
 }
 #text-area {
   border-radius: 3px;
