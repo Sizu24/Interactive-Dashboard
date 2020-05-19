@@ -131,8 +131,15 @@ let searchValue = ()=>{
 
 /* --------------------------- Local Storage --------------------------- */
 
-// check if local storage supported
-let supportLocalStorage = ()=>{
+// Variables
+const emailSwitchButton = document.getElementById("email-switch");
+const publicSwitchButton = document.getElementById("public-switch");
+const timezone = document.getElementById("timezone");
+
+// Functions
+
+// Check if local storage supported
+const supportLocalStorage = ()=>{
   try{
     return localStorage in window && window["localStorage"] !== null;
   }catch (e){
@@ -140,43 +147,51 @@ let supportLocalStorage = ()=>{
   }
 };
 
-const emailSwitchButton = document.getElementById("email-switch");
-const publicSwitchButton = document.getElementById("public-switch");
-const timezone = document.getElementById("timezone");
-
-let checkEmailSetting = ()=>{
-  if(emailSwitchButton.checked !== true){
-    localStorage.setItem("Emails", false);
+const checkSettings = (switchName, key)=>{
+/* 
+  See if button is toggled on or off,
+  and set key name and setting in setItem
+*/
+  if(switchName.checked !== true){
+    localStorage.setItem(key, false);
     return false;
   }else{
-    localStorage.setItem("Emails", true);
+    localStorage.setItem(key, true);
     return true;
   }
-};
+}
 
-let checkProfileSetting = ()=>{
-  if(publicSwitchButton.checked !== true){
-    localStorage.setItem("Public", false);
-    return false;
-  }else{
-    localStorage.setItem("Public", true);
-    return true;
-  }
-};
-
-let timezoneSetting = ()=>{
+// Check which time zone is selected
+const timezoneSetting = ()=>{
   let index = timezone.selectedIndex;
   localStorage.setItem("Timezone", index);
 };
 
+const getItemFunction = ()=>{
+  /* 
+    Get saved items, parse JSON so boolean works instead of string
+  */
+  let emailCheckBox = localStorage.getItem("Emails");
+  emailSwitchButton.checked = JSON.parse(emailCheckBox);
+
+  let profileCheckBox = localStorage.getItem("Public");
+  publicSwitchButton.checked = JSON.parse(profileCheckBox);
+
+  timezone.selectedIndex = localStorage.getItem("Timezone");
+};
+
 
 if(supportLocalStorage){
+/*
+ Check if supported, if so, run event listener for save/cancel buttons
+ Then load saved items.
+*/
   const saveButton = document.querySelector(".save");
   const cancelButton = document.querySelector(".cancel");
   
   saveButton.addEventListener("click", ()=>{
-    checkEmailSetting();
-    checkProfileSetting();
+    checkSettings(emailSwitchButton, "Emails");
+    checkSettings(publicSwitchButton, "Public");
     timezoneSetting();
   });
 
@@ -185,19 +200,11 @@ if(supportLocalStorage){
     localStorage.removeItem("Public");
     localStorage.removeItem("Timezone");
   });
-}
 
-let getItemFunction = ()=>{
-  let emailCheckBox = localStorage.getItem("Emails");
-  emailSwitchButton.checked = JSON.parse(emailCheckBox);
+  getItemFunction();
+};
 
-  let profileCheckBox = localStorage.getItem("Public");
-  publicSwitchButton.checked = JSON.parse(profileCheckBox);
 
-  timezone.selectedIndex = localStorage.getItem("Timezone");
-}
-
-getItemFunction();
 
 
 
