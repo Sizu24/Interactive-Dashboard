@@ -1,7 +1,10 @@
 /* ---------------------- Message section ---------------------- */
 
-// Check if search and message fields are empty. Alert user if empty
 send.addEventListener('click', ()=>{
+/* 
+Check if search and message fields are empty. Alert user if empty
+ */
+
   // Variables
   const user = document.getElementById('find-user');
   const message = document.getElementById('text-area');
@@ -23,23 +26,20 @@ send.addEventListener('click', ()=>{
 // variables
 const bell = document.getElementById("bell");
 const blueDot = bell.firstElementChild;
-
 const dropdown = document.getElementById("dropdown");
 
 // Notification List items
-let itemOne = "Pick up cake";
-let itemTwo = "Play Warzone";
-let itemThree = "Make pizza";
+let listItems = ['Pick up cake','Play Warzone','Make pizza'];
 
-// List
-let listItems = 
-`
-<ul id="notifications">
-  <li><span>x</span>${itemOne}</li>
-  <li><span>x</span>${itemTwo}</li>
-  <li><span>x</span>${itemThree}</li>
-</ul>
-`;
+const addToList = ()=>{
+  let ulList = document.createElement("ul");
+  ulList.setAttribute("id","notifications");
+  let items = document.createElement("li");
+  for(let i = 0; i < listItems.length; i++){
+    ulList.innerHTML += `<li><span>x</span>${listItems[i]}</li>`;
+  }
+  return ulList;
+};
 
 // Event listener for notification bell & add items to notification list
 bell.addEventListener("click", ()=>{
@@ -51,8 +51,8 @@ bell.addEventListener("click", ()=>{
   if(dropdown.innerHTML === ""){
     dropdown.classList.add("dropdown-style");
     dropdown.classList.add("show");
-    dropdown.innerHTML = listItems;
-
+    let newList = addToList();
+    dropdown.appendChild(newList);
     closeBox();  
   }
 });
@@ -101,26 +101,34 @@ let names = ['Victoria Chambers','Dayle Byrd','Dawn Wood','Dan Oliver'];
 let autoComlpleteItems = document.getElementById("auto-complete-items");
 
 let autoFillBox = document.getElementById("auto-fill");
-let userResults = [];
-let autoFillList = [];
+let filteredResults = [];
+let autoCompleteList = [];
 
 let searchValue = ()=>{
-
+/* 
+  Checks if user input matches anything name inside "names" array
+  If so, adds list tags with map function, and returns to new array "autoCompleteList"
+  Adds items from array to page, and deletes commas with .join function
+*/
   let searchBar = document.getElementById("find-user");
   let userInputValue = searchBar.value;
 
+  // Removes list-style dots
   autoComlpleteItems.style.listStyle = "none";
 
-    if(userInputValue !== ""){
-      userResults = names.filter(name => name.toLowerCase().indexOf(userInputValue.toLowerCase()) !== -1);
-      autoFillList = userResults.map(names => `<li>${names}<li>`);
-    }else {
-      autoFillList = [];
-    }
-    autoComlpleteItems.innerHTML = autoFillList.join(" ");
+  if(userInputValue !== ""){
+    // Filter function goes through all names in array, and sees if user input matches any names
+    filteredResults = names.filter(name => name.toLowerCase().indexOf(userInputValue.toLowerCase()) !== -1);
+    autoCompleteList = filteredResults.map(names => `<li>${names}<li>`);
+  }else {
+    // Clear array if no matches
+    autoCompleteList = [];
+  }
+  // Add results from array to HTML
+  autoComlpleteItems.innerHTML = autoCompleteList.join(" ");
 }
 
-  // if click on item, make textcontent of item into textcontent of searchbar
+  // If click on item in list, put textcontent of item into textcontent of searchbar
   autoComlpleteItems.addEventListener("click", e =>{
     let searchBar = document.getElementById("find-user");
     if(e.target.tagName === "LI"){
