@@ -2,9 +2,8 @@
 
 send.addEventListener('click', ()=>{
 /* 
-Check if search and message fields are empty. Alert user if empty
- */
-
+  Check if search and message fields are empty. Alert user if empty
+*/
   // Variables
   const user = document.getElementById('find-user');
   const message = document.getElementById('text-area');
@@ -32,6 +31,9 @@ const dropdown = document.getElementById("dropdown");
 let listItems = ['Pick up cake','Play Warzone','Make pizza'];
 
 const addToList = ()=>{
+/*
+ Function to create ul and li, add list items from array, and return list
+*/
   let ulList = document.createElement("ul");
   ulList.setAttribute("id","notifications");
   let items = document.createElement("li");
@@ -41,8 +43,29 @@ const addToList = ()=>{
   return ulList;
 };
 
-// Event listener for notification bell & add items to notification list
+const closeBox = ()=>{
+/* 
+  Function to close bell notification Item boxes when clicking "x"
+*/
+  let dropdownList = document.getElementById("notifications");
+  dropdownList.addEventListener("click", e =>{
+    if(e.target.textContent === "x"){
+      let closedropdown = e.target;
+      let dropdownItem = closedropdown.parentNode;
+      dropdownItem.classList.add("remove");
+
+      // Delay function to remove list item after CSS transition is complete
+      setTimeout(function(){
+        dropdownItem.remove();
+      }, 450);
+    }
+  });
+};
+
 bell.addEventListener("click", ()=>{
+/*
+ Event listener for notification bell & add items to notification list
+*/
   // make blue notification dot disappear into background color
   blueDot.style.backgroundColor = "#7377bf";
   blueDot.style.transitionDuration = "1s";
@@ -57,35 +80,22 @@ bell.addEventListener("click", ()=>{
   }
 });
 
-// Close Notification Items function
-const closeBox = ()=>{
-  let dropdownList = document.getElementById("notifications");
-  dropdownList.addEventListener("click", e =>{
-    if(e.target.textContent === "x"){
-      let closedropdown = e.target;
-      let dropdownItem = closedropdown.parentNode;
-      dropdownItem.classList.add("remove");
-
-      // Delay funciton to remove list item
-      setTimeout(function(){
-        dropdownItem.remove();
-      }, 450);
-    }
-  });
-};
-
 /* ------------------------- Alert Banner Pop-up ------------------------- */
 
+// Variables
 let alertBanner = document.getElementById("alert");
 
+// Banner HTML
 alertBanner.innerHTML = 
 `<div class="alert-banner">
   <p><strong>Alert: </strong>you have <strong>3 </strong>overdue tasks to complete</p>
   <p class="alert-banner-close">x</p>
 </div>`;
 
-// Make banner fade out, and add "inactive" class
 alertBanner.addEventListener('click', e =>{
+/* 
+  Make banner fade out, and add "inactive" class
+ */
   const element = e.target;
   if(element.classList.contains("alert-banner-close")){
     alertBanner.classList.add("inactive");
@@ -97,9 +107,9 @@ alertBanner.addEventListener('click', e =>{
 
 /* ---------------------- Auto Complete ---------------------- */
 
+// Variables
 let names = ['Victoria Chambers','Dayle Byrd','Dawn Wood','Dan Oliver'];
 let autoComlpleteItems = document.getElementById("auto-complete-items");
-
 let autoFillBox = document.getElementById("auto-fill");
 let filteredResults = [];
 let autoCompleteList = [];
@@ -110,6 +120,7 @@ let searchValue = ()=>{
   If so, adds list tags with map function, and returns to new array "autoCompleteList"
   Adds items from array to page, and deletes commas with .join function
 */
+  // Variables
   let searchBar = document.getElementById("find-user");
   let userInputValue = searchBar.value;
 
@@ -126,16 +137,18 @@ let searchValue = ()=>{
   }
   // Add results from array to HTML
   autoComlpleteItems.innerHTML = autoCompleteList.join(" ");
-}
+};
 
-  // If click on item in list, put textcontent of item into textcontent of searchbar
-  autoComlpleteItems.addEventListener("click", e =>{
-    let searchBar = document.getElementById("find-user");
-    if(e.target.tagName === "LI"){
-      searchBar.value = e.target.textContent;
-      autoComlpleteItems.innerHTML = "";
-    }
-  });
+autoComlpleteItems.addEventListener("click", e =>{
+/* 
+  If click on item in list, put textcontent of item into textcontent of searchbar
+*/
+  let searchBar = document.getElementById("find-user");
+  if(e.target.tagName === "LI"){
+    searchBar.value = e.target.textContent;
+    autoComlpleteItems.innerHTML = "";
+  }
+});
 
 /* --------------------------- Local Storage --------------------------- */
 
@@ -145,9 +158,10 @@ const publicSwitchButton = document.getElementById("public-switch");
 const timezone = document.getElementById("timezone");
 
 // Functions
-
-// Check if local storage supported
 const supportLocalStorage = ()=>{
+/* 
+  Check if local storage supported
+ */
   try{
     return localStorage in window && window["localStorage"] !== null;
   }catch (e){
@@ -169,16 +183,18 @@ const checkSettings = (switchName, key)=>{
   }
 }
 
-// Check which time zone is selected
 const timezoneSetting = ()=>{
+/*
+  Check which time zone is selected
+*/
   let index = timezone.selectedIndex;
   localStorage.setItem("Timezone", index);
 };
 
 const getItemFunction = ()=>{
-  /* 
-    Get saved items, parse JSON so boolean works instead of string
-  */
+/* 
+  Get saved items, parse JSON so boolean works instead of string
+*/
   let emailCheckBox = localStorage.getItem("Emails");
   emailSwitchButton.checked = JSON.parse(emailCheckBox);
 
@@ -188,11 +204,10 @@ const getItemFunction = ()=>{
   timezone.selectedIndex = localStorage.getItem("Timezone");
 };
 
-
 if(supportLocalStorage){
 /*
- Check if supported, if so, run event listener for save/cancel buttons
- Then load saved items.
+  Check if supported, if so, run event listener for save/cancel buttons
+  Then load saved items.
 */
   const saveButton = document.querySelector(".save");
   const cancelButton = document.querySelector(".cancel");
