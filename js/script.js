@@ -28,7 +28,7 @@ const blueDot = bell.firstElementChild;
 const dropdown = document.getElementById("dropdown");
 
 // Notification List items
-let listItems = ["Pick up cake","Play Warzone","Make pizza"];
+let listItems = ["Finish project","Play Warzone","Pick up pizza"];
 
 const addToList = ()=>{
 /*

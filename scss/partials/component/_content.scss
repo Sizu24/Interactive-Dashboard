@@ -27,7 +27,7 @@ header{
     li {
       position: relative;
       min-width: 95.734px;
-      padding: 20px 40px;
+      padding: 20px 60px 20px 50px;
       margin-bottom: 5px;
       background-color: #aeaddf;
       font-weight: 900;
@@ -41,9 +41,10 @@ header{
         transition-timing-function: ease-in;
       }
       span{
-        position: absolute;
+        position: relative;
+        top: -15px;
+        left: 135%;
         color: #fff;
-        margin-left: 117px;
         font-weight: bold;
         line-height: 5px;
         &:hover{
@@ -150,6 +151,9 @@ header{
     li {
       padding: 5px 20px;
       font-weight: 600;
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }

@@ -1,10 +1,15 @@
 #bell {
   .line {
     fill: #fff;
-  }
-  &:hover .line{
-    fill: #000;
     transition-duration: 1s;
+  }
+  &:hover {
+    cursor: pointer;
+    .line{
+      fill: #000;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in;
+    }
   }
   margin-left: 120px;
 }

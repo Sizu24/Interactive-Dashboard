@@ -21,10 +21,15 @@
 }
 #bell .line {
   fill: #fff;
+  transition-duration: 1s;
+}
+#bell:hover {
+  cursor: pointer;
 }
 #bell:hover .line {
   fill: #000;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
 }
 
 .alert-dot {
@@ -74,7 +79,7 @@ header section {
 .dropdown-style ul li {
   position: relative;
   min-width: 95.734px;
-  padding: 20px 40px;
+  padding: 20px 60px 20px 50px;
   margin-bottom: 5px;
   background-color: #aeaddf;
   font-weight: 900;
@@ -89,9 +94,10 @@ header section {
   transition-timing-function: ease-in;
 }
 .dropdown-style ul li span {
-  position: absolute;
+  position: relative;
+  top: -15px;
+  left: 135%;
   color: #fff;
-  margin-left: 117px;
   font-weight: bold;
   line-height: 5px;
 }
@@ -200,6 +206,9 @@ header section {
 .traffic-header ul li {
   padding: 5px 20px;
   font-weight: 600;
+}
+.traffic-header ul li:hover {
+  cursor: pointer;
 }
 
 .active {
