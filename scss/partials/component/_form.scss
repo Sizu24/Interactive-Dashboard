@@ -1,0 +1,84 @@
+// Message form content
+#find-user{
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: rgb(252, 250, 250);
+}
+#auto-complete-items{
+  ul{
+    // position: relative;
+    border: 1px solid gray;
+    padding-left: 0;
+    li{
+      padding: 30px;
+    }
+  } 
+}
+#text-area {
+  border-radius: 3px;
+  margin: 20px 0;
+  background-color: rgb(252, 250, 250);
+}
+.button {
+  width: 100%;
+  background-color:	#7377bf;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  font-weight: 800; 
+}
+
+// Settings content
+
+.switch-light{
+  margin: 10px 20px 22px;
+  @include mq($md){
+    margin-right: 135px;
+  }
+  strong{
+    float: left;
+  }
+  span{
+    float: right;
+  }
+}
+
+.switch-buttons{
+  max-width: 70px;
+}
+
+#timezone { 
+  height: 50px;
+  font-size: 1em;
+  width: 475px;
+  margin: 15px auto;
+  @include mq($md){
+    width: 550px;
+  }
+}
+
+.settings-button{
+  display: flex;
+  button{
+    border: none;
+    margin: 10px auto;
+    padding: 15px 0;
+    border-radius: 5px;
+    color: #fff;
+    width: 43%;
+    @include mq($md){
+      width: 44%;
+    }
+  }
+  .save {
+    background-color: $main;
+    margin-right: 23px;
+
+  }
+  .cancel {
+    background-color: #b2b2b2;
+    margin-left: 23px;
+  }
+}

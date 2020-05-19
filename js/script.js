@@ -1,13 +1,13 @@
 /* ---------------------- Message section ---------------------- */
 
-send.addEventListener('click', ()=>{
+send.addEventListener("click", ()=>{
 /* 
   Check if search and message fields are empty. Alert user if empty
 */
   // Variables
-  const user = document.getElementById('find-user');
-  const message = document.getElementById('text-area');
-  const send = document.getElementById('send');
+  const user = document.getElementById("find-user");
+  const message = document.getElementById("text-area");
+  const send = document.getElementById("send");
   
   if(user.value === "" && message.value === ""){
     alert("Both fields musth be filled out to submit");
@@ -28,7 +28,7 @@ const blueDot = bell.firstElementChild;
 const dropdown = document.getElementById("dropdown");
 
 // Notification List items
-let listItems = ['Pick up cake','Play Warzone','Make pizza'];
+let listItems = ["Pick up cake","Play Warzone","Make pizza"];
 
 const addToList = ()=>{
 /*
@@ -92,7 +92,7 @@ alertBanner.innerHTML =
   <p class="alert-banner-close">x</p>
 </div>`;
 
-alertBanner.addEventListener('click', e =>{
+alertBanner.addEventListener("click", e =>{
 /* 
   Make banner fade out, and add "inactive" class
  */
@@ -108,7 +108,7 @@ alertBanner.addEventListener('click', e =>{
 /* ---------------------- Auto Complete ---------------------- */
 
 // Variables
-let names = ['Victoria Chambers','Dayle Byrd','Dawn Wood','Dan Oliver'];
+let names = ["Victoria Chambers","Dayle Byrd","Dawn Wood","Dan Oliver"];
 let autoComlpleteItems = document.getElementById("auto-complete-items");
 let autoFillBox = document.getElementById("auto-fill");
 let filteredResults = [];
