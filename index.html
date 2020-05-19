@@ -241,24 +241,24 @@
       <section class="settings"> 
         <h2>Settings</h2>
 
-        <label class="switch-light switch-material" onclick="">
-          <input type="checkbox">
+        <label class="switch-light switch-ios" onclick="">
+          <input id="email-switch" type="checkbox">
           <strong>
             Send Email Notifications
           </strong> 
-          <span>
+          <span class="switch-buttons">
             <span>Off</span>
             <span>On</span>
             <a></a>
           </span>
         </label>
 
-        <label class="switch-light switch-material" onclick="">
-          <input type="checkbox">
+        <label class="switch-light switch-ios" onclick="">
+          <input id="public-switch" type="checkbox">
           <strong>
             Set Profile to Public
           </strong>
-          <span>
+          <span class="switch-buttons">
             <span>Off</span>
             <span>On</span>
             <a></a>
@@ -267,6 +267,7 @@
         
         <select class="form-field" id="timezone">
           <option>Select Timezone</option>
+          <option>Pacific</option>
           <option>Eastern</option>
         </select>
 
@@ -280,6 +281,7 @@
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+  <script src="js/charts.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

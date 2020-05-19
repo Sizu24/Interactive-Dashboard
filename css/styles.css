@@ -448,7 +448,6 @@ header section {
 }
 
 #find-user {
-  width: 520px;
   border-radius: 3px;
   padding: 10px;
   border: 1px solid gray;
@@ -457,9 +456,10 @@ header section {
 
 #auto-complete-items ul {
   border: 1px solid gray;
-  list-style-type: none;
   padding-left: 0;
-  list-style-position: inside;
+}
+#auto-complete-items ul li {
+  padding: 30px;
 }
 
 #text-area {
@@ -479,11 +479,11 @@ header section {
 }
 
 .switch-light {
-  margin: 20px;
+  margin: 10px 20px 22px;
 }
 @media (min-width: 768px) {
   .switch-light {
-    margin-right: 300px;
+    margin-right: 135px;
   }
 }
 .switch-light strong {
@@ -491,6 +491,10 @@ header section {
 }
 .switch-light span {
   float: right;
+}
+
+.switch-buttons {
+  max-width: 70px;
 }
 
 #timezone {

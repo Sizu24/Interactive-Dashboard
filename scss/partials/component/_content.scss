@@ -234,7 +234,6 @@ header{
 }
 
 #find-user{
-  width: 520px;
   border-radius: 3px;
   padding: 10px;
   border: 1px solid gray;
@@ -244,9 +243,10 @@ header{
   ul{
     // position: relative;
     border: 1px solid gray;
-    list-style-type: none;
     padding-left: 0;
-    list-style-position: inside;
+    li{
+      padding: 30px;
+    }
   } 
 }
 #text-area {
@@ -266,9 +266,9 @@ header{
 }
 // settings content
 .switch-light{
-  margin: 20px;
+  margin: 10px 20px 22px;
   @include mq($md){
-    margin-right: 300px;
+    margin-right: 135px;
   }
   strong{
     float: left;
@@ -276,6 +276,10 @@ header{
   span{
     float: right;
   }
+}
+
+.switch-buttons{
+  max-width: 70px;
 }
 
 #timezone { 
