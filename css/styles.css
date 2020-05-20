@@ -322,6 +322,7 @@ header section {
 }
 
 #text-area {
+  padding: 10px;
   border-radius: 3px;
   margin: 20px 0;
   background-color: #fcfafa;
