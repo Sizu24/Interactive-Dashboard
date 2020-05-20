@@ -1,4 +1,5 @@
 /* ---------------------- Message section ---------------------- */
+const send = document.getElementById("send");
 
 send.addEventListener("click", ()=>{
 /* 
@@ -7,8 +8,7 @@ send.addEventListener("click", ()=>{
   // Variables
   const user = document.getElementById("find-user");
   const message = document.getElementById("text-area");
-  const send = document.getElementById("send");
-  
+
   if(user.value === "" && message.value === ""){
     alert("Both fields musth be filled out to submit");
   }else if(user.value === ""){
@@ -36,7 +36,6 @@ const addToList = ()=>{
 */
   let ulList = document.createElement("ul");
   ulList.setAttribute("id","notifications");
-  let items = document.createElement("li");
   for(let i = 0; i < listItems.length; i++){
     ulList.innerHTML += `<li><span>x</span>${listItems[i]}</li>`;
   }
@@ -181,7 +180,7 @@ const checkSettings = (switchName, key)=>{
     localStorage.setItem(key, true);
     return true;
   }
-}
+};
 
 const timezoneSetting = ()=>{
 /*
